@@ -1,0 +1,7 @@
+name: CustomDrops
+version: ${project.version}
+main: me.pljr.customdrops.CustomDrops
+api-version: 1.13
+depend: [ PLJRApi ]
+authors: [ 9hx ]
+description: Simple plugin to customize drops from mobs and blocks.

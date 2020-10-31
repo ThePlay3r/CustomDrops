@@ -1,0 +1,53 @@
+# Big thanks and love for using my plugins! ^^
+
+#|--------------------------------------------------------------------------------------------------------------------|#
+# Plugin: PLJRApi
+# Author: https://www.mc-market.org/members/89497/
+# Description: Simple plugin to customize drops from mobs and blocks.
+# Dependencies:
+#   -> PLJRApi
+#|--------------------------------------------------------------------------------------------------------------------|#
+
+
+##############\
+# Mobs Setup ##################################################\
+############## Here you can customize drops for certain mobs. # \
+             ##################################################  \
+
+             #|##############################################################|#
+             #| Explanations:                                                |#
+             #|   drop-default -> Should we drop default items as well?      |#
+             #|   only-player -> Should we check, if the killer is a player? |#
+             #|##############################################################|#
+mobs:
+  cooked-cow:
+    drop-default: false
+    only-player: true
+    mob: "COW"
+    drops:
+      1:
+        type: "COOKED_BEEF"
+        amount: 3
+#|--------------------------------------------------------------------------------------------------------------------|#
+
+################\
+# Blocks Setup ####################################################\
+################ Here you can customize drops for certain blocks. # \
+               ####################################################  \
+
+               #|####################################################################################|#
+               #| Explanations:                                                                      |#
+               #|   drop-default -> Should we drop default items as well?                            |#
+               #|   check-for-drops -> Should we check, if the player gets any drops using his tool? |#
+               #|   drop-exp -> Should we drop experience orbs, after destroying the block?          |#
+               #|####################################################################################|#
+blocks:
+  cooked-iron:
+    drop-default: false
+    check-for-drops: true
+    drop-exp: true
+    material: "IRON_ORE"
+    drops:
+      1:
+        type: "IRON_INGOT"
+#|--------------------------------------------------------------------------------------------------------------------|#
