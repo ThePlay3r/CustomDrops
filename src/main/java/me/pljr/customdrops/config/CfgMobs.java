@@ -1,7 +1,7 @@
 package me.pljr.customdrops.config;
 
 import me.pljr.customdrops.objects.MobDrop;
-import me.pljr.pljrapi.managers.ConfigManager;
+import me.pljr.pljrapispigot.managers.ConfigManager;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;

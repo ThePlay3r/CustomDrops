@@ -44,7 +44,7 @@ public class BlockDestroy implements Listener {
                 event.setExpToDrop(0);
             }
             for (ItemStack item : blockDrop.getDrops()){
-                world.dropItemNaturally(location, item);
+                world.dropItem(location.add(0.5, 0, 0.5), item);
             }
         }
     }

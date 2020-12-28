@@ -31,7 +31,7 @@ public class EntityDeathListener implements Listener {
             }
             if (!mobDrop.isDropDefault()) event.getDrops().clear();
             for (ItemStack item : mobDrop.getDrops()){
-                world.dropItemNaturally(location, item);
+                world.dropItem(location, item);
             }
         }
     }
