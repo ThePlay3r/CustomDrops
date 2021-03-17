@@ -1,6 +1,7 @@
 package me.pljr.customdrops.listeners;
 
-import me.pljr.customdrops.config.CfgMobs;
+import lombok.AllArgsConstructor;
+import me.pljr.customdrops.config.Mobs;
 import me.pljr.customdrops.objects.MobDrop;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -12,19 +13,22 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 
+@AllArgsConstructor
 public class EntityDeathListener implements Listener {
+
+    private final Mobs mobs;
 
     @EventHandler
     public void onDeath(EntityDeathEvent event){
         EntityType entityType = event.getEntityType();
-        if (!CfgMobs.perEntityList.containsKey(entityType)) return;
+        if (!mobs.getPerEntityList().containsKey(entityType)) return;
 
         Entity entity = event.getEntity();
         World world = entity.getWorld();
         Location location = entity.getLocation();
 
-        for (String drop : CfgMobs.perEntityList.get(entityType)){
-            MobDrop mobDrop = CfgMobs.list.get(drop);
+        for (String drop : mobs.getPerEntityList().get(entityType)){
+            MobDrop mobDrop = mobs.getList().get(drop);
             if (mobDrop.isOnlyPlayer()){
                 Player player = event.getEntity().getKiller();
                 if (player == null || !player.hasPermission("customdrops.mobs."+drop)) continue;

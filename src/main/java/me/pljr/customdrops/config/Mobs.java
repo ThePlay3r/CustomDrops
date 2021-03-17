@@ -1,5 +1,6 @@
 package me.pljr.customdrops.config;
 
+import lombok.Getter;
 import me.pljr.customdrops.objects.MobDrop;
 import me.pljr.pljrapispigot.managers.ConfigManager;
 import org.bukkit.configuration.ConfigurationSection;
@@ -10,11 +11,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CfgMobs {
-    public static HashMap<String, MobDrop> list;
-    public static HashMap<EntityType, List<String>> perEntityList;
+@Getter
+public class Mobs {
+    private final HashMap<String, MobDrop> list;
+    private final HashMap<EntityType, List<String>> perEntityList;
 
-    public static void load(ConfigManager config){
+    public Mobs(ConfigManager config){
         list = new HashMap<>();
         perEntityList = new HashMap<>();
         ConfigurationSection cs = config.getConfigurationSection("mobs");

@@ -1,5 +1,6 @@
 package me.pljr.customdrops.config;
 
+import lombok.Getter;
 import me.pljr.customdrops.objects.BlockDrop;
 import me.pljr.pljrapispigot.managers.ConfigManager;
 import org.bukkit.Material;
@@ -10,11 +11,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CfgBlocks {
-    public static HashMap<String, BlockDrop> list;
-    public static HashMap<Material, List<String>> perMaterialList;
+@Getter
+public class Blocks {
+    private final HashMap<String, BlockDrop> list;
+    private final HashMap<Material, List<String>> perMaterialList;
 
-    public static void load(ConfigManager config){
+    public Blocks(ConfigManager config){
         list = new HashMap<>();
         perMaterialList = new HashMap<>();
         ConfigurationSection cs = config.getConfigurationSection("blocks");
